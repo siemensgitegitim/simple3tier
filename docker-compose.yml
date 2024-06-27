@@ -1,13 +1,13 @@
 version: '3'
 services:
   frontend:
-    image: frontend
+    image: ozgurozturknet/siemensgitegitim:frontend
     ports:
       - "3000:80"
     # Add any additional configuration for service1 here
 
   backend:
-    image: backend
+    image: ozgurozturknet/siemensgitegitim:backend
     ports:
       - "5000:80"
     environment:
@@ -17,7 +17,7 @@ services:
       - DB_NAME=todo_app
     # Add any additional configuration for service2 here
   database:
-    image: database
+    image: ozgurozturknet/siemensgitegitim:database
     ports:
       - "3306:3306"
     environment:

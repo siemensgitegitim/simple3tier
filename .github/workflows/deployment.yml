@@ -1,0 +1,23 @@
+name: ProdDeployment
+
+on:
+    push:
+        branches: [ deploy ]
+    workflow_dispatch:
+
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+
+            - name: Deploy to Docker swarm
+              uses: wshihadeh/docker-deployment-action@v1
+              with:
+                remote_docker_host: ubuntu@3.125.43.15
+                ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+                deployment_mode: docker-compose
+                stack_file_name: docker-compose.yml
+                args: my_application

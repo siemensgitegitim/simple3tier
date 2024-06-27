@@ -39,3 +39,4 @@ jobs:
                   file: ./Dockerfile.db
                   push: true
                   tags: ozgurozturknet/siemensgitegitim:database
+      
