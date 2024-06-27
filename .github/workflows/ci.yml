@@ -1,0 +1,26 @@
+name: Continues Integration Pipeline
+
+on:
+    push:
+    workflow_dispatch:
+
+
+
+
+jobs:
+    dockerimagebuild:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Login to Docker Hub
+              uses: docker/login-action@v3
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+ 
+ 
+            - name: FrontEndBuildAndPush
+              uses: docker/build-push-action@v6
+              with:
+                  file: ./Dockerfile.fe
+                  push: true
+                  tags: ozgurozturknet/siemensgitegitim:frontend
