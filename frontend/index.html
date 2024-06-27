@@ -5,12 +5,12 @@
     <title>HTML Web Page</title>
   </head>
   <body>
-    <h1>Merhaba BBDevOpsBootCamp Proje Ekibi</h1>
+    <h1>Merhaba Siemens R&D Ekibi</h1>
     <h1>::Yapilacaklar Listesi::</h1>
     <div id="todos"></div>
 
     <script>
-      fetch("http://backend.ayti.tech/")
+      fetch("http://127.0.0.1:5000")
         .then((response) => response.json())
         .then((data) => {
           const todos = document.getElementById("todos");
