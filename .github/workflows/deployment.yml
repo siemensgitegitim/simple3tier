@@ -21,7 +21,6 @@ jobs:
                 ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
                 deployment_mode: docker-compose
                 stack_file_name: docker-compose.yml
-                args: my_application
                 copy_stack_file: true
                 deploy_path: /home/ubuntu
                 keep_files: 5
